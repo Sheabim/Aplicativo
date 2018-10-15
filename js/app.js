@@ -1,31 +1,50 @@
-const myHeading = document.getElementsByTagName('h1')[0];
-const myButton = document.getElementById('myButton');
-const myTextInput = document.getElementById('myTextInput');
+const toggleList = document.getElementById('toggleList');
+const listDiv = document.querySelector('.list');
+const descriptionInput = document.querySelector('input.description');
+const descriptionP = document.querySelector('p.description');
+const descriptionButton = document.querySelector('button.description');
+const addItemInput = document.querySelector('input.addItemInput');
+const addItemButton = document.querySelector('button.addItemButton');
+const removeItemButton = document.querySelector('button.removeItemButton');
+const listItems = document.getElementsByTagName('li');
 
-myButton.addEventListener('click', () => {
- myHeading.style.color = myTextInput.value;
+
+for(let i = 0; i< listItems.length; i += 1){
+listItems[i].addEventListener('mouseover', () => {
+  listItems[i].textContent = listItems[i].textContent.toUpperCase();
 });
 
-const myList = document.getElementsByTagName('li');
-
-for (let i = 0; i < myList.length; i += 1) {
-   myList[i].style.color = 'purple';
+listItems[i].addEventListener('mouseout', () => {
+  listItems[i].textContent = listItems[i].textContent.toLowerCase();
+ });
 }
 
+toggleList.addEventListener('click', () => {
+  if (listDiv.style.display == 'none') {
+    toggleList.textContent = 'Hide list';
+    listDiv.style.display = 'block';
+  } else {
+    toggleList.textContent = 'Show list';
+    listDiv.style.display = 'none';
+  }
+});
 
-const error = document.getElementsByClassName('error');
+descriptionButton.addEventListener('click', () => {
+  descriptionP.innerHTML = descriptionInput.value + ':';
+  descriptionInput.value = '';
+});
 
-for (let i = 0; i < error.length; i += 1) {
-   error[i].style.color = 'red';
-}
+addItemButton.addEventListener('click', () => {
+  let ul = document.getElementsByTagName('ul')[0];
+  let li = document.createElement('li');
+  li.textContent = addItemInput.value;
+  ul.appendChild(li);
+  addItemInput.value = '';
+});
 
-
-
-const input = document.querySelector('input');
-const p = document.querySelector('p.description');
-const button = document.querySelector('button');
-
-button.addEventListener('click', () => {
-p.textContent = input.value + ':';
-
-												});
+removeItemButton.addEventListener('click', () => {
+  let ul = document.getElementsByTagName('ul')[0];
+  let li = document.querySelector('li:last-child');
+  ul.removeChild(li);
+});
+  

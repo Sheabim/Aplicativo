@@ -7,34 +7,22 @@
   <body>
     <h1 id="myHeading">JavaScript and the DOM</h1>
     <p>Making a web page interactive</p>
-		<input type="text" id="myTextInput">
-		<button id="myButton">Make heading red</button>
-
-		<p>Things that are purple:</p>
-<ul>
-  <li>grapes</li>
-	<li class= "error">oranges</li>
-  <li>amethyst</li>
-		<li class= "error">trucks</li>
-  <li>lavender</li>
-		<li class= "error">camelo</li>
-  <li>plums</li>
-</ul>
-
-
-<h1 id="myHeading">JavaScript and the DOM</h1>
-   <p>Making a web page interactive</p>
-   <p class="description">Things that are purple:</p>
-   <input type="text" class="description">
-   <button class="description"> Change description </button>
-   <ul>
-     <li>grapes</li>
-     <li>amethyst</li>
-     <li>lavender</li>
-     <li>plums</li>
-   </ul>
-
-
-		<script src="app.js"></script>
+    <button id="toggleList">Hide list</button>
+    <div class="list">
+      <p class="description">Things that are purple:</p>
+      <input type="text" class="description">
+      <button class="description">Change list description</button>
+      <ul>
+        <li>grapes</li>
+        <li>amethyst</li>
+        <li>lavender</li>
+        <li>plums</li>
+      </ul>
+      <input type="text" class="addItemInput">
+      <button class="addItemButton">Add item</button>
+      <button class="removeItemButton">Remove last item</button>
+    </div>
+    <script src="app.js"></script>
+		<script src="temp.js"></script>
   </body>
 </html>
