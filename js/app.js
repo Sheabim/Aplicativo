@@ -23,6 +23,19 @@ listItems[i].addEventListener('mouseout', () => {
  });
 }
 
+// fxing bug above
+// listDiv.addEventListener('mouseover', (event) => {
+//   if (event.target.tagName == 'LI') {
+//     event.target.textContent = event.target.textContent.toUpperCase();
+//   }
+// });
+// listDiv.addEventListener('mouseout', (event) => {
+//   if (event.target.tagName == 'LI') {
+//     event.target.textContent = event.target.textContent.toLowerCase();
+//   }
+// });
+
+
 //Para esconder algo
 toggleList.addEventListener('click', () => {
   if (listDiv.style.display == 'none') {
@@ -54,4 +67,3 @@ removeItemButton.addEventListener('click', () => {
   let li = document.querySelector('li:last-child');
   ul.removeChild(li);
 });
-  
